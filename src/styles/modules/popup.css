@@ -34,18 +34,15 @@
 
 .popup__close-btn {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  border: 2px solid #000;
-  border-radius: 50%;
-  background-color: #FFF;
-  font-size: 1.2rem;
+  top: 4px;
+  right: 4px;
+  font-size: 1.6rem;
   line-height: 0.9rem;
   cursor: pointer;
   padding: 8px;
 }
 
-@media(min-width: 400px) {
+@media(min-width: 500px) {
   .popup {
     top: 50%;
     left: 50%;
@@ -54,5 +51,14 @@
     width: calc(100% - 20px);
     height: 320px;
     margin: 0 auto;
+  }
+
+  .popup__close-btn {
+    top: -10px;
+    right: -10px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #FFF;
+    font-size: 1.2rem;
   }
 }

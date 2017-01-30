@@ -15,7 +15,6 @@
   height: 42px;
   font-size: 1.8rem;
   padding: 0 10px;
- // margin: 65px 0 20px;
   margin-bottom: 20px;
   width: 100%;
 }
@@ -43,7 +42,7 @@
   font-weight: 600;
 }
 
-@media(min-width: 400px) {
+@media(min-width: 500px) {
   .login {
     width: 340px;
     margin: 0 auto;
