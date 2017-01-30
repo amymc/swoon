@@ -5,6 +5,27 @@
   transform: translateX(-50%) translateY(-50%);
   width: 600px;
   height: 320px;
+  padding: 30px;
   border: 2px solid black;
   border-radius: 8px;
+  box-shadow: 8px 8px 8px 0px #dce0e0
+}
+
+.popup__title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.popup__body {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.popup__close-btn {
+  display: block;
+  text-align: right;
+  font-size: 1.6rem;
+  cursor: pointer;
 }

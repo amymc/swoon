@@ -6,9 +6,9 @@ class Popup extends Component {
   render() {
     return (
       <div className="popup">
-        <span className="modal__close-btn" onClick={(e) => this.props.onClick(e)}>X</span>
-        <h1>Heading</h1>
-        <p>Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
+        <span className="popup__close-btn" onClick={(e) => this.props.onClick(e)}>X</span>
+        <h1 className="popup__title">Heading</h1>
+        <p className="popup__body">Sed lobortis justo vitae nisi fermentum, dapibus dictum eros malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce vitae tellus et purus faucibus vehicula. Morbi felis tellus, ultrices vel pellentesque ut, efficitur vitae orci. Quisque sit amet sem vitae neque molestie finibus sit amet suscipit leo. Vivamus mattis sagittis blandit. Maecenas eget tortor blandit, venenatis ipsum ac, semper tortor.</p>
       </div>
     );
   }
