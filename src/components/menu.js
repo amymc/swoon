@@ -1,11 +1,11 @@
 import React from 'react';
-//import '../styles/modules/menu.css';
+import '../styles/modules/menu.css';
 
 const Menu = () => {
   return (
-    <ul>
-      <li>Log In</li>
-      <li>Products</li>
+    <ul className="menu">
+      <li className="menu__item">Log In</li>
+      <li className="menu__item">Products</li>
     </ul>
   );
 }

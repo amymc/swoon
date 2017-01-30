@@ -8,7 +8,17 @@
   padding: 30px;
   border: 2px solid black;
   border-radius: 8px;
-  box-shadow: 8px 8px 8px 0px #dce0e0
+  box-shadow: 8px 8px 8px 0px #dce0e0;
+  z-index: 1;
+  background-color: #FFF;
+}
+
+.popup__overlay {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #FFF;
 }
 
 .popup__title {

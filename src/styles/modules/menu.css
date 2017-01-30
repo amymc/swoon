@@ -1,0 +1,15 @@
+.menu {
+  width: 500px;
+  border: 1px solid black;
+}
+
+.menu__item {
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 10px;
+  font-weight: 600;
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  border-right: 1px solid black;
+}
