@@ -9,8 +9,12 @@ class Popup extends Component {
     this.onPageClick = this.onPageClick.bind(this);
   }
 
-   componentDidMount() {
+  componentDidMount() {
     window.addEventListener('mousedown', this.onPageClick);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('mousedown', this.onPageClick);
   }
 
   onPageClick(e) {
