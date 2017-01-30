@@ -5,12 +5,14 @@ class Login extends React.Component {
    constructor(props) {
     super(props);
     this.state = {
+      email: '',
       invalidEmail: false,
       showSignup: false
     };
 
     this.onRegisterClick = this.onRegisterClick.bind(this);
     this.onSignupClick = this.onSignupClick.bind(this);
+    this.renderLogin = this.renderLogin.bind(this);
     this.validateEmail = this.validateEmail.bind(this);
   }
 
@@ -26,13 +28,10 @@ class Login extends React.Component {
     e.preventDefault();
 
     this.validateEmail();
-
-    //  this.setState({
-    //   showSignup: true
-    // });
   }
 
   validateEmail() {
+    console.log('validate');
     // eslint-disable-next-line
     const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
@@ -44,27 +43,37 @@ class Login extends React.Component {
       this.setState({
         invalidEmail: false
       });
+      this.props.onLoginSuccess();
     }
+  }
+
+  renderLogin() {
+    return(
+      <div className="login__inner-wrapper">
+        <h1 className="login__title">Log in</h1>
+        <div className="login__error-wrapper">
+          {this.state.invalidEmail ?
+            <p className="login__text login__text--error">A valid email is required</p> :
+            null
+          }
+        </div>
+        <input className={"login__input" + (this.state.invalidEmail ? " login__input--error" : "")} value={this.state.email} type="email" placeholder="E-mail address" onChange={event => this.setState({email: event.target.value})}/>
+        {this.state.showSignup ?
+          <button className="button button--standard" onClick={(e) => this.onSignupClick(e)}>Sign up</button> :
+          <button className="button button--standard">Log in</button>
+        }
+        <button className="button button--text" onClick={(e) => this.onRegisterClick(e)}>Don't have an account? Register here</button>
+      </div>
+    );
   }
 
   render() {
     return (
       <div className="login">
-        <div className="login__inner-wrapper">
-          <h1 className="login__title">Log in</h1>
-          <div className="login__error-wrapper">
-            {this.state.invalidEmail ?
-              <p className="login__error">A valid email is required</p> :
-              null
-            }
-          </div>
-          <input className={"login__input" + (this.state.invalidEmail ? " login__input--error" : "")} type="email" placeholder="E-mail address"/>
-          {this.state.showSignup ?
-            <button className="button button--standard" onClick={(e) => this.onSignupClick(e)}>Sign up</button> :
-            <button className="button button--standard">Log in</button>
-          }
-          <button className="button button--text" onClick={(e) => this.onRegisterClick(e)}>Don't have an account? Register here</button>
-        </div>
+        {this.props.is_logged_in ?
+          <p className="login__text">You have successfully signed in</p> :
+          this.renderLogin()
+        }
       </div>
     );
   }

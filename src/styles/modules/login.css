@@ -30,9 +30,12 @@
   padding-top: 30px;
 }
 
-.login__error {
-  font-size: 1.2rem;
+.login__text {
+  font-size: 1.4rem;
   font-weight: 700;
+}
+
+.login__text--error {
   color: #FA653F;
 }
 

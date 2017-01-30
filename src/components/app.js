@@ -9,11 +9,13 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      is_logged_in: false,
       showPopup: true,
       showLogin: false
     };
 
     this.onLoginClick = this.onLoginClick.bind(this);
+    this.onLoginSuccess = this.onLoginSuccess.bind(this);
     this.onPopupClick = this.onPopupClick.bind(this);
   }
 
@@ -22,6 +24,13 @@ class App extends Component {
 
     this.setState({
       showLogin: true
+    });
+  }
+
+  onLoginSuccess() {
+    console.log('login sucess');
+    this.setState({
+       is_logged_in: true
     });
   }
 
@@ -38,7 +47,7 @@ class App extends Component {
       <div className="app">
         <Menu onLoginClick={this.onLoginClick}/>
         {this.state.showLogin ?
-          <Login /> :
+          <Login onLoginSuccess={this.onLoginSuccess} is_logged_in={this.state.is_logged_in}/> :
           null
         }
         {this.state.showPopup ?
