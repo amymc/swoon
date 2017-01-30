@@ -11,3 +11,11 @@ body, #root {
   height: 100%;
 }
 
+button {
+  background-color: #FA653F;
+  color: #FFF;
+  text-align: center;
+  border: none;
+  padding: 12px;
+  font-size: 1.8rem;
+}
