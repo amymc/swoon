@@ -12,18 +12,28 @@
 }
 
 .login__input {
-  border: 2px solid black;
+  border: 2px solid #000;
   height: 42px;
   font-size: 1.8rem;
   padding: 0 10px;
-  margin: 65px 0 20px;
+ // margin: 65px 0 20px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
-.login__text {
+.login__input--error {
+  border: 2px solid #FA653F;
+}
+
+.login__error-wrapper {
+  height: 70px;
+  padding-top: 30px;
+}
+
+.login__error {
   font-size: 1.2rem;
-  margin-top: 20px;
-  font-weight: 600;
-  cursor: pointer;
+  font-weight: 700;
+  color: #FA653F;
 }
 
 .login__title {
