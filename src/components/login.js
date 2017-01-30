@@ -53,7 +53,7 @@ class Login extends React.Component {
         <form className="modal__form" onSubmit={(e) => this.onLoginSubmit(e)} >
           <div className="login__error-wrapper">
             {this.state.invalidEmail ?
-              <p className="login__text login__text--error">A valid email is required</p> :
+              <p className="text text--error">A valid email is required</p> :
               null
             }
           </div>
@@ -69,9 +69,9 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login">
+      <div className="login box">
         {this.props.is_logged_in ?
-          <p className="login__text">You have successfully signed in</p> :
+          <p className="text">You have successfully signed in</p> :
           this.renderLogin()
         }
       </div>

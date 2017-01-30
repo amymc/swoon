@@ -6,7 +6,7 @@ const Products = (props) => {
   return (
     <div className='products'>
       {props.products.map((product, index) => {
-        return <Product key={index} product={product} />
+        return <Product key={index} product={product} onClick={props.onClick}/>
       })}
     </div>
   );

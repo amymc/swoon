@@ -4,6 +4,7 @@ import Login from './login';
 import Menu from './menu';
 import Popup from './popup';
 import Products from './products';
+import ProductDetail from './productdetail';
 import '../styles/modules/app.css';
 
 class App extends Component {
@@ -14,13 +15,16 @@ class App extends Component {
       is_logged_in: false,
       showLogin: false,
       showPopup: true,
-      showProducts: false
+      showProducts: false,
+      showProductDetail: false,
+      currentProduct: null
     };
 
     this.onLoginClick = this.onLoginClick.bind(this);
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
     this.onProductsClick = this.onProductsClick.bind(this);
     this.onPopupClick = this.onPopupClick.bind(this);
+    this.renderProductDetail = this.renderProductDetail.bind(this);
   }
 
   onLoginClick(e) {
@@ -57,7 +61,20 @@ class App extends Component {
     });
   }
 
+  renderProductDetail(title) {
+    console.log('render', title);
+
+     this.setState({
+      showProductDetail: true,
+      showProducts: false,
+      currentProduct: title
+    });
+  }
+
   render() {
+    const { products } = this.props;
+    const currentProduct = products.filter(product => product.name === this.state.currentProduct)[0];
+
     return (
       <div className="app">
         <Menu onLoginClick={this.onLoginClick} onProductsClick={this.onProductsClick}/>
@@ -66,11 +83,15 @@ class App extends Component {
           null
         }
         {this.state.showProducts && this.state.is_logged_in ?
-          <Products products={this.props.products}/> :
+          <Products products={products} onClick={this.renderProductDetail}/> :
           null
         }
         {this.state.showProducts && !this.state.is_logged_in ?
-          <p>Please log in</p> :
+          <p className="text box">Please log in</p> :
+          null
+        }
+        {this.state.showProductDetail ?
+          <ProductDetail product={currentProduct}/> :
           null
         }
         {this.state.showPopup ?

@@ -5,7 +5,7 @@ const Product = (props) => {
   const { product } = props;
 
   return (
-    <div className="product">
+    <div className="product" onClick={() => props.onClick(product.name)}>
       <img src={product.image} alt={product.name} />
       <p>{product.name} - &pound;{product.price}</p>
     </div>
