@@ -5,7 +5,7 @@ const Menu = (props) => {
   return (
     <ul className="menu">
       <li className="menu__item" onClick={(e) => props.onLoginClick(e)}>Log In</li>
-      <li className="menu__item">Products</li>
+      <li className="menu__item" onClick={(e) => props.onProductsClick(e)}>Products</li>
     </ul>
   );
 }
