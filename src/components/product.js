@@ -2,10 +2,12 @@ import React from 'react';
 //import '../styles/modules/product.css';
 
 const Product = (props) => {
+  const { product } = props;
+
   return (
     <div>
-      PRODUCT
-      {props.title}
+      <img src={product.image} alt={product.name} />
+      <p>{product.name} - &pound;{product.price}</p>
     </div>
   );
 }

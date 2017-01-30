@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import Login from './login';
 import Menu from './menu';
 import Popup from './popup';
-import Product from './product';
+import Products from './products';
 import '../styles/modules/app.css';
 
 class App extends Component {
@@ -53,6 +52,7 @@ class App extends Component {
     e.preventDefault();
 
     this.setState({
+      showLogin: false,
       showProducts: true
     });
   }
@@ -66,9 +66,7 @@ class App extends Component {
           null
         }
         {this.state.showProducts && this.state.is_logged_in ?
-          this.props.products.map((product, index) => {
-            return <Product key={index} product={product} />
-          }) :
+          <Products products={this.props.products}/> :
           null
         }
         {this.state.showProducts && !this.state.is_logged_in ?
