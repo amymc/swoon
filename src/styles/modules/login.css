@@ -1,8 +1,7 @@
 .login {
-  width: 340px;
   border: 1px solid #000;
   padding: 26px 42px;
-  margin: 0 auto;
+  margin: 0 15px;
   text-align: center;
 }
 
@@ -42,4 +41,11 @@
 .login__title {
   font-size: 2.4rem;
   font-weight: 600;
+}
+
+@media(min-width: 400px) {
+  .login {
+    width: 340px;
+    margin: 0 auto;
+  }
 }
