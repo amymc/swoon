@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Menu from './menu';
 import Popup from './popup';
 import '../styles/modules/app.css';
 
@@ -17,13 +18,14 @@ class App extends Component {
     e.preventDefault();
 
     this.setState({
-      showPopup: !this.state.showPopup
+      showPopup: false
     });
   }
 
   render() {
     return (
       <div className="app">
+        <Menu />
         {this.state.showPopup ?
           <Popup onClick={this.handleClick} /> :
           null
