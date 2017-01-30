@@ -1,12 +1,13 @@
 import React from 'react';
 //import '../styles/modules/product.css';
 
-const Products = (props) => {
+const Product = (props) => {
   return (
     <div>
-      PRODUCTS
+      PRODUCT
+      {props.title}
     </div>
   );
 }
 
-export default Products;
+export default Product;

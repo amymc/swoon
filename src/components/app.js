@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Login from './login';
 import Menu from './menu';
 import Popup from './popup';
-import Products from './products';
+import Product from './product';
 import '../styles/modules/app.css';
 
 class App extends Component {
@@ -64,7 +66,9 @@ class App extends Component {
           null
         }
         {this.state.showProducts && this.state.is_logged_in ?
-          <Products /> :
+          this.props.products.map((product, index) => {
+            return <Product key={index} product={product} />
+          }) :
           null
         }
         {this.state.showProducts && !this.state.is_logged_in ?
@@ -80,4 +84,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  products: state.products
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(App);
