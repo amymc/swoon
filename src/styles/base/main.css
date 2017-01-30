@@ -14,7 +14,6 @@ body, #root {
 .button {
   text-align: center;
   border: none;
-  background-color: transparent;
   cursor: pointer;
 }
 
@@ -27,6 +26,7 @@ body, #root {
 }
 
 .button--text {
+  background-color: transparent;
   font-size: 1.2rem;
   margin-top: 20px;
   font-weight: 700;

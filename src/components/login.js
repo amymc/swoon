@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../styles/modules/login.css';
 
 class Login extends React.Component {
@@ -58,7 +58,7 @@ class Login extends React.Component {
             }
           </div>
           <input className={"login__input" + (this.state.invalidEmail ? " login__input--error" : "")} value={this.state.email} type="email" placeholder="E-mail address" onChange={event => this.setState({email: event.target.value})}/>
-          <button className="button button--standard" type="submit">
+          <button className="button button--standard button--bright" type="submit">
             {this.state.showSignup ? 'Sign up' : 'Log in'}
           </button> 
           <button className="button button--text" onClick={(e) => this.onRegisterClick(e)}>Don't have an account? Register here</button>

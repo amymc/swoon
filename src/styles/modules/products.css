@@ -1,4 +1,6 @@
 .products {
   display: flex;
   flex-wrap: wrap;
+  max-width: 520px;
+  margin: 0 auto;
 }
