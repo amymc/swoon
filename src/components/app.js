@@ -38,7 +38,9 @@ class App extends Component {
   }
 
   onPopupClick(e) {
-    e.preventDefault();
+    if(e) {
+      e.preventDefault();
+    }
 
     this.setState({
       showPopup: false
