@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Login from './login';
 import Menu from './menu';
 import Popup from './popup';
 import '../styles/modules/app.css';
@@ -8,13 +9,23 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPopup: true
+      showPopup: true,
+      showLogin: false
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.onLoginClick = this.onLoginClick.bind(this);
+    this.onPopupClick = this.onPopupClick.bind(this);
   }
 
-  handleClick(e) {
+  onLoginClick(e) {
+    e.preventDefault();
+
+    this.setState({
+      showLogin: true
+    });
+  }
+
+  onPopupClick(e) {
     e.preventDefault();
 
     this.setState({
@@ -25,9 +36,13 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Menu />
+        <Menu onLoginClick={this.onLoginClick}/>
+        {this.state.showLogin ?
+          <Login /> :
+          null
+        }
         {this.state.showPopup ?
-          <Popup onClick={this.handleClick} /> :
+          <Popup onClick={this.onPopupClick} /> :
           null
         }
       </div>
