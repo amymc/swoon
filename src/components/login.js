@@ -11,7 +11,7 @@ class Login extends React.Component {
     };
 
     this.onRegisterClick = this.onRegisterClick.bind(this);
-    this.onSignupClick = this.onSignupClick.bind(this);
+    this.onLoginClick = this.onLoginClick.bind(this);
     this.renderLogin = this.renderLogin.bind(this);
     this.validateEmail = this.validateEmail.bind(this);
   }
@@ -24,7 +24,7 @@ class Login extends React.Component {
     });
   }
 
-  onSignupClick(e) {
+  onLoginClick(e) {
     e.preventDefault();
 
     this.validateEmail();
@@ -58,10 +58,9 @@ class Login extends React.Component {
           }
         </div>
         <input className={"login__input" + (this.state.invalidEmail ? " login__input--error" : "")} value={this.state.email} type="email" placeholder="E-mail address" onChange={event => this.setState({email: event.target.value})}/>
-        {this.state.showSignup ?
-          <button className="button button--standard" onClick={(e) => this.onSignupClick(e)}>Sign up</button> :
-          <button className="button button--standard">Log in</button>
-        }
+        <button className="button button--standard" onClick={(e) => this.onLoginClick(e)}>
+          {this.state.showSignup ? 'Sign up' : 'Log in'}
+        </button> 
         <button className="button button--text" onClick={(e) => this.onRegisterClick(e)}>Don't have an account? Register here</button>
       </div>
     );

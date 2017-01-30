@@ -26,7 +26,8 @@ class App extends Component {
     e.preventDefault();
 
     this.setState({
-      showLogin: true
+      showLogin: true,
+      showProducts: false
     });
   }
 
