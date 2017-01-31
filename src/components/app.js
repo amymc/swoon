@@ -32,7 +32,8 @@ class App extends Component {
 
     this.setState({
       showLogin: true,
-      showProducts: false
+      showProducts: false,
+      showProductDetail: false
     });
   }
 
